@@ -18,8 +18,6 @@
                         <h3 class="m-0">Welcome!</h3>
                         <img class="img-fluid rounded mx-auto d-block" loading="lazy"
                             src="{{ asset('../assets/img/1339726.png') }}" alt="BootstrapBrain Logo">
-                        <p class="mb-0">Not a member yet? <a href="{{ route('register') }}"
-                                class="link-secondary text-decoration-none">Register now</a></p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 bsb-tpl-bg-lotion">

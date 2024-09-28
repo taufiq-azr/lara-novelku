@@ -1,61 +1,92 @@
-## About Project
 
-a web novel built using the Laravel framework, the website is made simple only as a learning material.
+# **Web Novel Novelku Documentation**
 
-## About Laravel
+## **Project Overview**
+The Web Novel Website is built using the Laravel framework. The platform allows users to read web novels whereas admins can upload and manage novels. It provides a simple interface. The site has a responsive design for both mobile and desktop users.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## **Key Features**
+- **User Authentication**: Secure login and registration for admin.
+- **Novel Management**: Admin can create, update, and delete their novels, including features like categorizing by genre and adding chapters.
+- **Responsive Design**: The website is fully responsive and works seamlessly on both mobile devices and desktops.
+- **Admin Dashboard**: Admins can manage users, novels.
+  
+## **Technology Stack**
+- **Frontend**: Blade Templates, Bootstrap, CSS
+- **Backend**: Laravel 10, PHP 8.x
+- **Database**: MySQL
+- **Version Control**: Git
+- **Other**: Composer
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## **Installation and Setup**
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/taufiq-azr/lara-novelku.git
+   cd lara-novelku
+   ```
+2. **Install dependencies**:
+   ```bash
+   composer install
+   npm install && npm run dev
+   ```
+3. **Create `.env` file**:
+   Copy the `.env.example` file to `.env` and update the environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+4. **Generate application key**:
+   ```bash
+   php artisan key:generate
+   ```
+5. **Set up the database**:
+   Create a database and update the `.env` file with your database credentials:
+   ```bash
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=DB_DATABASE=novelku_database
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+6. **Run migrations**:
+   ```bash
+   php artisan migrate
+   ```
+7. **Start the development server**:
+   ```bash
+   php artisan serve
+   ```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## **Usage**
+- **Login**: Visit the `/login` page to login for admin.
+- **Browsing Novels**: After logging in, users can browse available novels.
+- **Adding New Novels** (for admin): Navigate to the "Admin" page under the author's dashboard to add a new novel.
 
-## Learning Laravel
+## **Screenshots**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 1. **Homepage**  
+   ![Homepage](screenshots/Screenshot_1.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+   The homepage provides a list of the latest novels and user recommendations.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. **Novel Details Page**  
+   ![Novel Details](screenshots/Screenshot_2.png)
 
-## Laravel Sponsors
+   This page shows the details of a selected novel, including the Genre, Status, and available chapters.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 3. **Admin Dashboard**  
+   ![Admin Dashboard](screenshots/Screenshot_3.png)
 
-### Premium Partners
+   Admin can manage their novels, view feedback from readers, and publish new chapters from this dashboard.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## **Code Structure**
+- **Models**: Located in `app/Models`, these include models like `Novels`, `Chapters`, `Users`.
+- **Controllers**: Located in `app/Http/Controllers`, these handle requests such as `NovelController`, `UserController` etc.
+- **Routes**: Defined in `routes/web.php`, these include all the routes for web navigation.
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## **Contributing**
+If you'd like to contribute to the project:
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature/feature-name`).
+3. Commit your changes (`git commit -m "Add new feature"`).
+4. Push to the branch (`git push origin feature/feature-name`).
+5. Open a pull request.

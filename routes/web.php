@@ -28,8 +28,6 @@ Route::get('/', [NovelController::class, 'index'])->name('index');
 // Authentication Routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-
 // Admin Routes
 Route::middleware('auth')->group(function () {
     Route::get('/admin-page', [AdminController::class, 'adminPage'])->name('admin.admin_page');
